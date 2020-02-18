@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>List of ScannedBy Category</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	
+	
+<!--===============================================================================================-->
+
+</head>
+<body>
+<h2 th:text="${scan}"></h2>
+<h2 th:text="${scannedBy}"></h2>
+
+	<div>
+					<table id="scannedByList" class="table table-striped" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">#</th>
+										<th class="th-sm">Event Name</th>
+										<th class="th-sm">Scanned Date</th>
+										<th class="th-sm">Scanned Time</th>
+										<th class="th-sm">First Name</th>
+										<th class="th-sm">Middle Initial</th>
+										<th class="th-sm">Last Name</th>
+										<th class="th-sm">Email</th>
+										<th class="th-sm">Email2</th>
+										<th class="th-sm">Company</th>
+										<th class="th-sm">Job Title</th>
+										<th class="th-sm">Address1</th>
+										<th class="th-sm">Address2</th>
+										<th class="th-sm">Address3</th>
+										<th class="th-sm">City</th>
+										<th class="th-sm">State</th>
+										<th class="th-sm">Zip</th>
+										<th class="th-sm">Country</th>
+										<th class="th-sm">Phone Number</th>
+										<th class="th-sm">Phone Number2</th>
+										<th class="th-sm">Fax Number</th>
+										<th class="th-sm">Question</th>
+										<th class="th-sm">Responsive</th>
+										<th class="th-sm">Note</th>
+										<th class="th-sm">Collateral</th>
+										<th class="th-sm">Qualified</th>
+										
+    </tr>
+  </thead>
+  <tbody>
+   
+  </tbody>
+ 
+</table>
+</div>
+						
+			
+
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+
+			$(this).on('ps-x-reach-start', function(){
+				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+			});
+
+			$(this).on('ps-scroll-x', function(){
+				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+			});
+
+		});
+
+		
+		
+		
+	</script>
+<!--===============================================================================================-->
+
+	<script src="js/main.js"></script>
+	<script type="text/javascript" th:src="@{~/css/jquery-1.11.3.min.js}"></script>
+	 <script th:src="@{~/custom/scannedBy.js}"></script>
+	 <script type="text/javascript" th:src="@{~/js/jquery.dataTables.min.js}"></script>
+	<script th:inline="javascript">
+	var message = [[${scan}]];
+	 var globalVariable={
+		       x: message
+		    };
+	console.log(message);
+	</script>
+	
+
+</body>
+</html>
